@@ -20,8 +20,8 @@ export class ResultComponent implements OnInit {
     document.getElementById("productsTab").style.display = "none";
     document.getElementById("shippingTab").style.display = "none";
     document.getElementById("billingTab").style.display = "none";
-    document.getElementById("resultTab").style.display = "none"; // block
-
+    document.getElementById("resultTab").style.display = "block"; // block
+//
     this.products = productService.getLocalCartProducts();
 
     this.products.forEach((product) => {

@@ -28,8 +28,8 @@ export class BillingDetailsComponent implements OnInit {
     /* Hiding Shipping Tab Element */
     document.getElementById("productsTab").style.display = "none";
     document.getElementById("shippingTab").style.display = "none";
-    document.getElementById("billingTab").style.display = "block";
-    document.getElementById("resultTab").style.display = "none";
+    document.getElementById("billingTab").style.display = "block"; // none
+    document.getElementById("resultTab").style.display = "block"; /// none
 
     this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
