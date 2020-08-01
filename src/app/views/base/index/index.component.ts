@@ -11,7 +11,8 @@ export class IndexComponent implements OnInit {
       bannerImg: "./assets/banner_img/img_1.png",
       title: "Go Veg",
       description: "deliver your vegitables on your doorsteps",
-    },
+    }
+    /*,
     {
       bannerImg: "./assets/banner_img/img_3.jpg",
       title: "Never Settle - OnePlus",
@@ -22,7 +23,7 @@ export class IndexComponent implements OnInit {
       bannerImg: "./assets/banner_img/img_4.jpg",
       title: "Google Pixel",
       description: "Discover a better way to capture, store, and see the world",
-    },
+    },*/
   ];
 
   constructor() {}
