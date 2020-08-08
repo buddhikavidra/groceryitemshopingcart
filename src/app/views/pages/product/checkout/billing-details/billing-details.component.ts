@@ -14,6 +14,9 @@ import { map } from "rxjs/operators";
   // templateUrl: "./billing-details.component.html",
   styleUrls: ["./billing-details.component.scss"],
   template: `
+  <h1>Add any products not listed in our site</h1>
+  <h5>if we can't clearly identify your product spesifically we will contact you</h5>
+ <br>
   <form #formRef="ngForm">
     <div *ngFor="let word1 of words1; let in=index" class="col-sm-3">
         <div class="form-group">
