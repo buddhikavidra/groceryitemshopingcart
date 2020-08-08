@@ -11,10 +11,36 @@ import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-billing-details",
-  templateUrl: "./billing-details.component.html",
+  // templateUrl: "./billing-details.component.html",
   styleUrls: ["./billing-details.component.scss"],
+  template: `
+  <form #formRef="ngForm">
+    <div *ngFor="let word1 of words1; let in=index" class="col-sm-3">
+        <div class="form-group">
+
+        <label>Product Name</label> : <input type="text" [(ngModel)]="words2[in].value" name="name{{in}}" class="form-control" #name="ngModel" required />
+          <!--<p [hidden]="words2[in].value">Field is required</p>
+          {{formRef.form.name1}}-->
+        </div>
+        <div class="form-group">
+
+<label>Product Quentity</label> : <input type="text" [(ngModel)]="words1[in].value2" name="name{{in}}" class="form-control" #name="ngModel" required />
+  <!--<p [hidden]="words2[in].value">Field is required</p>
+  {{formRef.form.name1}}-->
+</div>
+        <br />
+    </div>
+    <button [disabled]="!formRef.form.valid" (click)="add()">Add input</button>
+  </form>
+  <br />
+  <br />
+  {{words2 | json}}
+  {{words1 | json}}
+  `
 })
 export class BillingDetailsComponent implements OnInit {
+  words2 = [{value: "word1"}, {value: ""}];
+  words1 = [{value2: "word1"}, {value2: ""}];
   userDetails: User;
   products: Product[];
   userDetail: UserDetail;
@@ -67,4 +93,7 @@ export class BillingDetailsComponent implements OnInit {
       { outlets: { checkOutlet: ["result"] } },
     ]);
   }
-}
+  add() {
+    this.words2.push({value: "new product"});
+    this.words1.push({value2: "new product"});
+}}
